@@ -351,3 +351,175 @@
 # num_list2[1] = 200
 # print(f'num-list : {num_list}')
 # print(f'num_list2 : {num_list2}')
+
+# 04/15 =====================================================================================================================================
+
+# numList1 = [10, 20, 30]
+# numList2 = [40, 50, 60]
+# numList3 = [70, 80, 90]
+#
+# numList4 = [numList1, numList2, numList3]
+#
+# print(numList4)
+# # 2차원 리스트의 요소 == 1차원 리스트
+# print(numList4[1])
+# # 2차원 리스트의 요소의 요소 == 값
+# print(numList4[1][2])
+#
+# for n1 in numList4: # n1은 numList4가 가진 1차원 리스트
+#     for n2 in n1:   # n2는 n1(1차원 리스트)의 값
+#         print(n2, end = ' ')
+
+
+
+#  N X N 행렬 대각선 더하기
+# numList = [[11, -2, 4],
+#            [4, 5, 6],
+#            [10, -12, 9]]
+#
+# # hap1 = numList[0][0] + numList[1][1] + numList[2][2]
+# hap1 = 0
+# for i in range(len(numList)):   #  len(numList) == N
+#     hap1 += numList[i][i]
+# # hap2 = numList[0][2] + numList[1][1] + numList[2][0]
+# hap2 = 0
+# for i in range(len(numList)):   #  len(numList) == N
+#     hap2 += numList[len(numList) - 1 - i][i]
+# print(f"주대각선의 합은 {hap1} 이다.")
+# print(f"부대각선의 합은 {hap2} 이다.")
+
+
+# 튜플 ==> [] 대괄호
+
+# tp1 = 10,        # 튜플은 수정이 불가(값 추가/변경/삭제 불가)
+# print(tp1)       # 튜플 전체 삭제는 가능
+# tp2 = 10, 20,    # 튜플 <--> 리스트 변환 가능
+# print(tp2)
+
+
+# 딕셔너리 ==> {} 중괄호
+# key와 value가 한 쌍
+                                   # key와 value를 반대로 생성해도 무방함
+# dict1 = {1:'a', 2:'b', 3:'c'}      # 딕셔너리는 순서가 없음
+# print(dict1)                       # 인덱싱X ==> for문에 못씀
+
+# 딕셔너리의 선언
+# md = {'a':"apple",1:"일","이":2,"mylist":(1, 2, 3)}
+# # 값 참조
+# print(md['a'])
+# print(md[1])
+#
+# # 딕셔너리에 값을 추가(존재하지 않는 키와 값 쌍을 대입연산자로)
+# md["오"] = 100
+# print(md)
+#
+# # 딕셔널에 값을 수정(존재하는 키와 값 쌍을 대입연산자로)
+# md["오"] = 500
+# print(md)
+#
+# # 딕셔너리를 중복되지 않고 유일함
+# empDict = {"사번":1000,"이름":"홍길동","사번":2000}
+# print(empDict)
+#
+# #딕셔너리의 쌍을 삭제(del 사용)
+# del(md["a"])
+# print(md)
+
+# 키를 이용한 딕셔너리 값 출력
+# print(list(md.keys()))
+#
+# for k in md.keys():
+#     print(md[k])
+
+# values()를 이용한 값 출력
+# print(list(md.values()))
+#
+# print(md.items())
+# for k, v in md.items() :
+#     print(f"key : {k}/values : {v}")
+
+# 04/18 ===========================================================================================================================
+
+# # 문제 1
+# import random
+#
+# msg = ["aba", "xyz", "abc", "121"]
+#
+# same_count = 0
+# for m in msg :
+#     if m[0] == m[-1] :
+#         same_count += 1
+#
+# print(f"같은 문자열 갯수 : {same_count}")
+#
+# # 문제 2
+# list1 = [1,2,3,4,5,6]
+# list2 = [6,7,8,9,10]
+#
+# same_number = False
+# for i in list1:
+#     for i in list2:
+#         same_number = True
+#
+#     if same_number:
+#         break
+# print(same_number)
+
+# # 문제 3
+
+# import random
+#
+# lottery = []
+# while (len(lottery) < 6):
+#     num = random.randint(1,45)
+#     if num in lottery:
+#         continue
+#     lottery.append(num)
+# lottery.sort()
+# print(lottery)
+
+# lottery_range = list(range(1,46))
+# lottery = random.choices(lottery_range, k = 6)
+# print(lottery)
+
+# lottery_range = list(range(1, 46))
+# random.shuffle(lottery_range)
+# lottery = lottery_range[:6]
+# print(lottery_range)
+# print(lottery)
+
+# 문제 4
+
+# # 문제 5
+#
+# # 1부터 99까지 두자리 정수로 이루어진....(01,02,03.........98,99)
+# import random
+# player = int(input("복권 번호 입력 ==> "))
+#
+# com = random.randint(1,99)
+#
+# print(f"당첨번호는 {com}입니다")
+# if player == com:
+#     print("1등상")
+# elif (player // 10) == com or (player % 10) == (com % 10):
+#     print("2등상")
+# else:
+#     print("미당첨")
+
+# # 문제 6
+#
+# import random
+#
+# dices = [random.randint(1,6),
+#          random.randint(1,6),
+#          random.randint(1,6)]
+#
+# total = dices[0]
+# for idx in range(2):
+#     if dices[idx] == 1:
+#         total += 0
+#     elif dices[idx] == 6:
+#         total += dices[idx + 1] * 2
+#     else :
+#         total += dices[idx + 1]
+# print(f"{str(dices)[1:-1]} -> {total}")
