@@ -166,3 +166,120 @@
 #     print(my_func2(30))
 #
 # my_func1()
+
+# 05/16 =================================================================================================================================
+
+# # y와 p의 개수가 동일한지?
+# # 1) 대소문자를 구별하지 않는다
+#
+# def solution(msg):
+#     msg = msg.lower()
+#     p_count = msg.count('p')
+#     y_count = msg.count('y')
+#
+#     if p_count == y_count:
+#         return True
+#     else:
+#         return False
+#
+# s = 'pPoooyY'
+# print(solution(s))
+# s = 'Pyy'
+# print(solution(s))
+
+# 하샤드 수 : 각 자릿수를 더한 값으로 나누었을 때 나머지가 0이면 True,아니면 False   ==================================
+
+# def solution(n):
+    # 각 자릿수 합
+    #  1. 수학적으로
+    # hap = 0
+    # tmp = n
+    # while n != 0:
+    #     hap += tmp % 10        # 1의 자릿수 누적
+    #     tmp = tmp / 10           # 1의 자릿수 버림
+
+    # 2. 문자열 변환으로
+    # 리스트의 요소들에게 각각 특정 함수를 씌우는 방법
+    # map 함수    map(함수, 리스트)
+    # map 함수의 결과는 map 객체
+    # return n % sum(list(map(int,list(str(n))))) == 0  <=== 짧게 하기
+
+    # hap = 0
+    # msg= str(n) # int to string
+    # l = list(msg)  # string to list
+    #
+    # for c in l:
+    #     hap += int(c)
+    #
+    #
+    # if n % hap == 0:
+    #     return True
+    # else:
+    #     return False
+
+# arr = [10, 12, 11, 13]
+# for n in arr:
+#     print(solution(n))
+
+# 정수 내림차순 배치 ==========================================================================================
+# def soltuion(num):
+#     nl = list(str(num))
+#     nl.sort(reverse = True)
+#     print(nl)
+#
+#     list to string
+#     msg = ''
+#     for n in nl:
+#         msg += n
+#     # string to int
+#
+#     # 구분문자열.join(문자열 리스트)
+#     # => 문자열(구분문자열)문자열(구분문자열)....
+#     msg = ''.join(nl)
+#
+#     result = int(msg)
+#     return result
+# n = 118372
+# print(soltuion(n))
+
+# X만큼 간격이 있는 n개의 숫자 =========================================================================================================
+# X부터 X씩 증가하는 숫자 n개가 담긴 리스트를 변환
+# def solution(x, n):
+#     nl = []
+#     for i in range(1, n+1):
+#         nl.append(x * i)
+#     return nl
+#
+# x_list = [2, 4, -4]
+# n_list = [5, 3, 2]
+#
+# for i in range(len(x_list)):
+#     print(solution(x_list[i], n_list[i]))     # 방법 1
+#
+# for x, n in zip(x_list, n_list):
+#     print(solution(x, n))                  # 방법 2
+
+# 두 정수 사이의 합 ==========================================================================
+# def solution(a, b):
+#     if a > b:
+#         a, b = b, a
+#
+#     # 삼항연산자(Tri-op)
+#     # 변수 = 참일때 값 if 조건식 else 거짓일 때 값
+#
+#     a, b = b, a if a > b else a, b
+# 
+#     hap = 0
+#     for i in range(a, b + 1):
+#         hap += i
+#     return hap
+#
+#     hap = sum(list(range(a, b+ 1)))
+#     return hap
+#
+# a_list = [3, 3, 5]
+# b_list = [5, 3, 3]
+#
+# for a, b in zip(a_list, b_list):
+#     print(solution(a, b))
+
