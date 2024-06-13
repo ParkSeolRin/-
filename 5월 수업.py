@@ -444,3 +444,63 @@
 # s = "try hello world"
 # print(solution(s))
 
+# 05/27 ==================================================================================================================================
+
+# fp = open('input.txt', 'r', encoding= "UTF-8")
+# msg = fp.readline().strip()  # .strip() => 문자열의 함수, 마지막에 있는 엔터값을 없애줌
+# print(msg)
+# msg = fp.readline().strip()
+# print(msg)
+# msg = fp.readline().strip()
+# print(msg)
+# msg = fp.readline().strip()
+# print(msg)
+# fp.close()  # 파일 닫기
+#
+# fp = open('input.txt', 'r', encoding= "UTF-8")
+# while True:
+#     msg = fp.readline().strip()
+#     if msg == '':
+#         break
+#     print(msg.strip())
+#
+# fp = open('input.txt', 'r', encoding= "UTF-8")
+# msg_list = [m.strip() for m in fp.readlines()]
+#
+# # for 인덱스, 값 in enumerate(순서가 있는 데이터)
+# # enumerate는 인덱스와 값을 묶은 정보를 만들어줌
+#
+# for idx, msg in enumerate(msg_list):
+#     print(f'{idx+1} : {msg}')
+#
+# for msg in msg_list:
+#     print(msg)
+# fp.close()
+
+# write(문자열) - 문자열을 파일에 쓴다
+# write(문자열) - 문자열 + 개행문자를 파일에 쓴다
+# wrtie(문자열 리스트) - 리스트에 있는 문자열을 한 줄씩 파일에 쓴다
+
+# fp = open('output.txt', 'w')
+# fp.write('안녕')
+# fp.write('하세요\n')
+# fp.write
+
+# open(파일 경로, 모드, encoding = 'UTF - 8')
+# 모드 => 'r': 읽기, 'w':'쓰기', 'a': '추가'
+#        'w' 또는 'a'모드로 열린 파일은 닫을 때까지
+#        다른 프로그램이 사용할 수 없음(트랜젝션 : Transaction)
+
+# readline() : 한줄 읽기
+# readlines() : 모든 줄을 읽어서 리스트에 담기
+#    (+) 문자열의 strip():문자열 끝에 있는 엔터값(개행문자)을 없애줌
+
+# 18.
+# 가지고 있는 돈 money에 대해서 price원인 놀이기구를 count번 탈려고 할 때
+# 얼마가 부족한가?
+# 이 때, 놀이기구는 탈 때마다 price만큼 비싸진다
+# def solution(price, money, count):
+#     cost = sum([price * x for x in range(1, count + 1)])
+#     return max(0, cost - money)
+#
+# print(solution(3, 20, 4))
